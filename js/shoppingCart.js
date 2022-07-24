@@ -20,18 +20,18 @@ const products = document.querySelectorAll('.item-a');
 const updateShoppingCartHTML = function () {  
 	if (productsInCart.length > 0) {
 		let result = productsInCart.map(product => {
-			console.log(product);
 			return `
 				<li class="buyItem">
-					<img src="${product.image}">
-					<div>
-						<h5>${product.name}</h5>
+						<img src="${product.image}">
+						<div class="product-name">
+							<h5>${product.name}</h5>
+						</div>
 						<div>
 							<button class="button-minus" data-id=${product.id}>-</button>
 							<span class="countOfProduct">${product.count}</span>
 							<button class="button-plus" data-id=${product.id}>+</button>
 						</div>
-					</div>
+					
 				</li><br>`
 		});
 		cartParentElement.innerHTML = result.join(' ');
